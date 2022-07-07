@@ -1,0 +1,86 @@
+1. jQuery
+    1) DOM의 쉬운 조작, 쉽고 일관된 이벤트 처리, 각종 효과 기능 제공 (시각화 지원), 
+       쉬운 Ajax지원 등 자바 스크립트 전반을 지원하는 라이브러리(프레임워크)
+    2) 자바스크립트에서 DOM 객체를 질의(query)해 조작한다는 의미
+        => 문서 탐색 및 조작을 위한 쉬운 노드 접근 기술 제공.
+    3) HTML DOM객체에 접근하기 위해 셀렉터(selector)메커니즘을 사용
+        - CSS 셀렉터로 문서의 특정 노드를 찾을 수 있음
+
+2. $()
+    1) HTML DOM의 특정 노드에 접근하거나, DOM 요소를 생성하거나,
+       DOM 구조의 로디을 완료한 후 실행할 콜백 함수를 지정하기 위해 사용하는 함수
+    2) ()안에 매개변수로 셀렉터를 기술
+        - 셀렉터를 해석해 HTML DOM 구조 상의 노드를 찾아 jQuery 객체로 반환함.
+        - 해당 객체와 이벤트를 바인딩하거나, 효과를 연결하는 작업이 가능.
+    3) $
+        - jQuery의 별칭
+    4) jQuery 객체의 메소드는 jQuery 객체 자신을 반환 값으로 전달하기 때문에 메소드 체인 구성이 가능
+
+3. jQuery(document).ready(function() {...}) or
+   $(document).ready(function() {...}) <<더 주로 사용됨.
+        1) jQuery 이벤트인 문서 로딩 이벤트에 대한 이벤트 핸들러 구현할 때 사용.
+            - 매개변수로 전달된 document객체를 jQuery 객체로 변환하고, 
+              jQuery 객체의 ready() 메소드의 매개변수인 함수가 문서 로딩 이벤트의 이벤트핸들러 함수로 등록됨.
+
+4. 셀렉터
+    1) 문서 내의 노드를 쉽게 식별하고 참조하기 위해 사용하는 기술
+    2) CSS 셀렉터와 동일 
+
+5. jQuery 이벤트 종류
+    1) 문서 로딩                ready                   해당 DOM 로딩이 완료되었을 때
+    2) 마우스                  click
+                              dbclick                 double click
+                              focusin
+                              focusout
+                              hover
+                              mouseenter
+                              mouseleave
+                              mousedown
+                              mouseup
+                              mousemove
+                              mouseout
+                              mouseover
+    3) 키보드                  keypress
+                              keydown
+                              keyup
+                              focusin
+                              focusout
+    4) form                  focus
+                              blur
+                              change
+                              select
+                              submit
+    5) 웹브라우저               resize
+                              scroll
+
+6. 이벤트 등록 및 제거 (참조 WebStorm 04.JS_Functions lab.11,12)
+    1) on() 
+        - 현재 선택된 요소에 대해 하나 이상의 이벤트와 이벤트 핸들러 함수를 연결하는 메서드    
+    2) off()
+        - 현재 선택된 요소에 대해 하나 이상의 이벤트와 이벤트 핸들러 함수의 연결을 해제하는 메서드
+    3) one()
+        - 현재 선택된 요소에 대해 하나 이상의 이벤트와 이벤트 핸들러 함수를 연결하는 메서드
+        - 단, 한번만 실행된다!
+    4) hide()
+        - display : none 을 적용한것과 비슷
+        - 요소가 사라지는 애니메이션 효과를 주기 위해서 사용
+        - 애니메이션이 실행되는 시간 설정 (문자열 or 숫자)
+            - 문자열 : slow normal fast
+            - 숫자 : 200 400 600 
+        - callback 함수
+            - 애니메이션이 끝났을 때 호출되는 함수임
+    5) show()
+        - 요소가 나타나는 애니메이션 효과를 주기 위해서 사용
+        - 이하 상동
+
+7. 페이딩 (참조 WebStorm 04.JS_Functions lab.13)
+    1) 의미 : HTML 요소의 불투명도(opacity)를 조정하는 기능
+        - fadeIn()
+            - opacity 를 0에서 1로 변경하여 서서히 나타나는 애니메이션 효과를 주기 위해 사용
+        - fadeOut()
+            - opacity 를 1에서 0으로 변경하여 서서히 나타나는 애니메이션 효과를 주기 위해 사용
+
+9. 슬리이딩 (참조 WebStorm 04.JS_Functions lab.14)
+    1) 의미 : HTML 요소의 높이를 조절하여 접었다 폈다 할 수 있는 기능.
+        - slideUp()
+        - slideDown()

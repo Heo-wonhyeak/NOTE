@@ -1,0 +1,18 @@
+1. CSS Grid
+    1) 2차원 레이아웃 시스템 제공 (행과 열)
+    2) 격자를 그리는 테크닉
+    3) Container와 item이라는 두 가지 개념으로 구분됨.
+        - Container는 item을 감싸는 부모 요소임
+        - 그 안에서 각 item을 배치할 수 있음
+
+2. Grid Container Properties
+    1) display : grid;
+        - 그리드 컨테이너를 정의
+    2) grid-template-rows: 1fr 2fr;
+        - 명시적으로 행의 크기를 정의
+        - fr(fraction,부분,일부) : 너비 비율 조정 
+            ex) 1fr 2fr; = 1:2 비율
+        - fr 숫자는 행의 숫자만큼 늘릴수 있다
+            ex) 4행 1fr 1fr 1fr 1fr;
+    3) grid-template-columns: 1fr 2fr;
+        - 명시적으로 열의 크기를 정의

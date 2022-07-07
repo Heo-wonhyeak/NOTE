@@ -1,0 +1,142 @@
+1. CSS(Cascading Style Sheets)
+    1) HTML문서를 시각적으로 꾸미는 혁할.
+    2) 한번 작성한 CSS를 여러 HTML페이지에서 재 사용 가능(변경 용이)
+    3) CSS 파일만 변경해도 해당 CSS를 적용한 모든 웹 페이지 요소가 자동으로 업데이트 됨.
+
+2. CSS 적용하기
+    1) 간단하게 스타일을 적용하는 방법 (HTML 내부)
+        <Style>
+            CSS 코드
+        </Style>
+    
+    2) 특정 태그에 적용하는 방식 (인라인 방식)
+        - 요소의 style 속성에 직접 스타일을 작성하는 방식(선택자 없음)
+
+    3) 외부 CSS 파일 적용하는 방법 (CSS 파일생성)
+        - <link rel="stylesheet" href="CSSfile명(경로)"/>
+            - ex) <link rel="stylesheet" href="./css/main.css"/>
+
+3. CSS 기본 문법
+    1)        스타일종류(Property)
+               ---
+        선택자 { 속성 : 값 ; }
+        ----
+        스타일(CSS)을 적용할 대상(Selector)
+
+    2) 주석(cmd + /) : /* 설명 작성 */
+
+4. CSS 기본선택자 (Selector)
+    1) HTML에 스타일을 적용할때 HTML 요소를 지정하는 역할을 함.
+    2) 전체 선택자 (universal selector)
+        - 특정 태그 대신 * 기호를 사용함.
+            - head를 포함한 HTMl 문서 내의 모든 요소를 선택함.
+        - <style>
+            *{
+                color : red;
+            }
+        </style>
+
+    3) 유형 선택자 (type selector)
+        - 특정 태그를 지정해 사용함.
+        - <style>
+            태그 유형 {
+                color : red;
+            }
+        </style>
+
+    4) 아이디 선택자 (ID selector)
+        - 아이디로 요소를 식별해주는 선택자임.
+        - 모든 태그 요소 중에 특정 아이디 하나를 선택할 때 사용함.
+        - 아이디는 중복되지 않는 고유한 값이어야 함.
+        - <p id="아이디"> 내용 </p>
+        - <style>
+            #아이디 {
+                color : red;
+            }
+        </style>
+
+    5) 클래스 선택자 (class selector)
+        - HTML class 속성의 값이 ~인 요소 선택.
+        - 특정 클래스에 속하는 요소를 선택함.
+        - 클래스는 아이디와 비슷한 기능을 하지만, 클래스는 여러 태그를 하나의 클래스로 묶을 수도 있음.
+        - 태그 하나에 여러 클래스 이름을 붙여줄 수도 있음.
+        - <style>
+            .클래스 {
+                color : red;
+            }
+        </style>
+
+    6) 복합 선택자 (combinator selector)
+        - 선택자 A 와 B를 동시에 만족하는 요소 선택.
+        - 부모와 자식 태그가 복합적으로 쓰임.
+        - 서로의 관계와 위치를 유용하게 결합하는 방식을 제공함.
+        - 일치 선택자(Basic combinator)
+            - 선택자를 동시에 만족하는 요소 선택
+        - 자식 선택자(Child combinator)
+            - 선택자의 자식 요소 선택
+            - ex) 
+                ul > .fruit { /* 복합 연산자중 자식 만 선택*/
+                            color : black;
+                        }
+        - 하위(후손) 선택자(Descendent combinator) 
+            - 선택자의 하위 요소 선택
+            - ex)
+                div .fruit { /*띄어쓰기로 선택함*/
+                            background-color: yellow;
+                        }
+        - 인접 형제 선택자(Adjacent Sibling combinator)
+            - 선택자의 다음 현제 요소 하나를 선택
+            - ex)
+                .fruit + li { 
+                            color : navy;
+                        }
+        - 일반 형제 선택자(General sibling combinator)
+            - 선택자 다음 형제 요소 모두를 선택
+            - ex)
+                .fruit ~ li {
+                            color : lime;
+                        }
+
+5. 가상 클래스 선택자(pseudo-classes selectors)
+    1) 선택한 요소가 특별한 상태여야 만족할수 있음.
+    2) 구분 - 동적 가상 클래스, 구조적 가상 클래스
+    3) 동적 가상 클래스 : dynamic pseudo classes
+        - 어던 상태나 조건이 발생할 때 사용자의 액션에 따라 스타일이 바뀌는 선택자임.
+        1] A:hover
+            - 선택자 A 요소에 마우스 커서가 올라가 있는 동안 선택.
+        2] A:active
+            - 선택자 A 요소에 마우스를 클릭하고 있는 동안 선택.
+        3] A:focus
+            - 선택자 A 요소가 포커스되면 선택
+        4] A:visited
+            - 사용자가 이미 방문한 링크를 표시해줌.
+        5] A:disabled
+            - 비활성화된 요소를 나타냄
+            - 요소를 비활성화시킴.
+    4) 구조적 가상 클래스 : structural pseudo classes
+        - A:first-child
+            - 선택자 A가 형제 요소 중 첫번째 요소라면 선택
+            - 형제 요소가 없다면 적용되지 않는다(혼자일때는 불가능)
+        - A:last-child
+            - 선택자 A가 형제 요소중 마지막 요소라면 선택
+            - 형제 요소가 없어도 적용 가능 (혼자 있어도 가능)
+        - A:nth-child(i)
+            - 선택자 A가 형제 요소 중 (i)번째라면 선택
+            - n 키워드 사용시 0부터 선택 (zero-based numbering)
+                - 2n = 짝수
+                - 2n+1 = 홀수 (n이 0부터 시작하기에 0+1=1 1,3,5...)
+                - n+i = i번째 이후 요소를 모두 선택
+
+6. 가상 요소 선택자(Pseudo-Elements)
+    - A::before
+        - 선택자 A 요소의 내부 앞에 내용(content)을 삽입.
+        - 인라인(글자) 요소 삽입
+    - A::after
+        - 선택자 A 요소의 내부 뒤에 내용(content)을 삽입.
+        - 인라인(글자) 요소 삽입
+
+7. 속성 선택자(Attribute)
+    - [A]
+        - 속성 A을 포함한 요소 선택
+    - [A="B"]
+        - 속성 A를 포함한 요소중 값이 B인 요소 선택

@@ -1,0 +1,31 @@
+1. 웹브라우저와 자바스크립트 실행환경
+    - 구글드라이브 HTML5 14p 참조
+
+2. 웹 브라우저 객체
+
+3. DOM HTML API 를 이용한 HTML 문서요소 접근 및 조작 (참조 : WebStorm 04.JS_Functions lab04.html)
+        1) 용도 : 문서 순회
+            - Node.childNodes : Node 객체의 배열 객체처럼 작동하는 NodeList 객체로 
+              자식노드 객체들에 대한 참조를 갖고있음.(NodeListOf<ChildNode>)
+        2) 용도 : 문서 내 요소 찾기
+            - Document.getElementById(id) : id 속성이 같은 유일 노드 객체의 참조를 반환함.
+        3) 용도 : 문서에 새로운 내용 추가하기 (참조 : WebStorm 04.JS_Functions lab06.html)
+            - InnerHTML.innerHTML : HTML 텍스트 문자열을 기술하면 간단히 새로운 내용을 추가함.
+            - document.createElement() : 새로운 Element 객체를 생성함.
+            - document.createTextNode() : 새로운 TextNode 객체를 생성함.
+            - Node.appendChild() : 자식노드 객체를 추가함
+
+4. 이벤트와 이벤트 핸들러 프로퍼티
+    이벤트      이벤트 핸들러            발생시점
+------------------------------------------------------------
+    load       onload              문서,이미지 로딩이 완료되었을 때
+    abort      onabort             이미지 로딩이 중단되었을 때
+    click      onclick             마우스로 클릭할 때
+    mousedown  onmousedown         마우스 버튼을 눌렀을 때
+    submit     onsubmit            submit 버튼이 눌렸을 때 - form 내용을 전송
+    change     onchange            요소의 내용이 변경되었을 때
+
+5. DOM 이벤트 핸들링 (참조 : WebStorm 04.JS_Functions lab07.html)
+    1) 이벤트 리스너 (event listener)
+        - 한개의 html 요소에서 복수의 이벤트와 연관을 맺을 수 있음.
+        

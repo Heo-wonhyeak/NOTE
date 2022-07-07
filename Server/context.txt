@@ -1,0 +1,11 @@
+ <Resource 
+    	name="jdbc/oracle"
+    	auth="Container"
+    	type="javax.sql.DataSource"
+    	driverClassName="oracle.jdbc.driver.OracleDriver"
+    	url="jdbc:oracle:thin:@db202204191820_high?TNS_ADMIN=/Users/hwh/sqlworkspace/DBeaver/Wallet_DB202204191820"
+    	username="ADMIN"
+    	password="Gjdnjsgur02@"
+    	maxActive="50"
+    	maxWait="-1"
+    />  

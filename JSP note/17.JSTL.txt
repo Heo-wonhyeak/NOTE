@@ -1,0 +1,56 @@
+1. 국제화(Formatting) 태그
+    1) 국가별 다양한 언어, 날짜, 시간, 숫자 형식을 설정할 때 사용됨
+    2) 태그 종류
+        - 숫자 포맷, 날짜 포맷, 타임존 설정 , 로케일 설정
+
+    3) 숫자 포맷
+        - 태그 형식
+            <fmt:formatNumber value="출력할 숫자 값" 
+                              type="출력양식" ex) percent, currency, number(default) 
+                              var="변수명" 
+                              groupingUsed="세자리마다 콤마 출력 여부, default true - 안쓰려면 false 입력해줄것" 
+                              pattern="출력할 숫자 양식" />
+    
+    4) 날짜,시간 포맷
+        - 태그 형식
+            <fmt:formatDate value="출력할 날짜" 
+                            type="출력 양식" 
+                            dateStyle="날짜 스타일" 
+                            timeStyle="시간 스타일" 
+                            var="변수명" 
+                            scope="영역" 
+                            pattern="날짜 패턴"
+                            timezone="세계시간"/>
+        - 태그 속성
+            - type : 날짜(date), 시간(time), 날짜 및 시간(both) - default date
+            - dateStyle : default, short, medium, long, full - default medium(default)
+            - timeStyle : default, short, medium, long, full - default medium(default)
+            - timezone : GMT(세계협정시), America/Chicaco(특정지역 검색하면 다 나옴)
+
+    5) 타임존
+        - 태그 형식
+            <fmt:timeZone value="formatDate의 타임존과 같음"></fmt:timeZone>
+    6) 로케일
+        - 태그 형식
+            <fmt:setLocale value=""/>
+        - 태그 속성
+            - value : ko_kr(한국), ja_jp(일본), en_us(영어), ca_fr(프랑스)
+
+2. XML 태그
+    1) XML 문서를 처리하기 위한 것
+        - eXtensible Markup Language
+            - 태그를 개발자가 직접 정의할 수있고 데이터를 기술할수 있는 언어임.
+            - 데이터 전달 역할
+    2) xml 태그 종류
+        - parse
+            - XML을 파싱할때 사용함
+        - out
+            - select 속성에 지정한 XPath 표현식의 결과를 출력함
+        - forEach
+            - select 속성에 지정한 반복되는 노드를 파싱(구문분석)함
+        - choose 
+            - select 속성에 지정한 XPath 표현식의 값을 다중 조건으로 결정함
+            - 하위에 when,otherwise 태그 사용함
+    3) XPath
+        - XML 문서의 요소(element)에 접근하기 위해 사용함
+        - XML 문서의 노드를 식별하고 탐색하는 역할을 함

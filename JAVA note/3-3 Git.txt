@@ -1,0 +1,17 @@
+1. 이클립스에서의 Git 사용법
+    0) perspective 선택(Git perspective) - java perspective에서도 확인 가능
+    1) 저장소 생성
+        - Team - Share Project
+        - Git 저장소 위치 지정 - Git 저장소 위치 선택
+            - 이클립스 자동생성 user/hwh/eclipse_workspace ==> user/hwh/git/repository
+        - Git 저장소 설정 정보 확인
+    2) 새로운 브랜치 생성 및 이동
+
+2. 협업을 위한 GitHub 기능
+    1) 저장소 협업자 등록하기
+    2) 저장소 이슈를 위한 새로운 레이블 생성하기.
+    3) 저장소 이슈 생성하기.
+    4) 프로젝트 보드 생성하기.
+        - Basic Kanban
+
+3. 로컬저장소와 원격 저장소 연결

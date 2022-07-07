@@ -1,0 +1,128 @@
+1. DML (Data Maniplation Language)
+    1) 테이블의 데이터를 조작하는 기능
+    2) 테이블의 레코드를 CRUD(Create, Retrieve, Update, Delete)
+                  - ABCD (Add, Browse, Change, Delete)
+    3)  INSERT
+        DELETE
+        UPDATE
+        SELECT
+
+2. DML 
+    1) 데이터 직접 삽입
+        INSERT INTO 테이블이름 [(속성들)]
+        VALUES (속성값들)
+    2) 데이터 수정
+        - UPDATE 테이블이름
+          SET 속성이름1 = 값1, 속성이름2 = 값2, ...
+          [WHERE 조건];
+    3) 데이터 삭제
+        - delete from 테이블이름        // 여기까지하면 전체삭제
+            [WHERE 조건];
+
+3. SELECT
+    1) 기본 검색
+        1] SELECT [ALL | DISTINCT] 속성들
+          from 테이블(들);
+            - ALL : 튜플의 중복을 허용하도록 지정
+            - DISTINCT : 튜플의 중복을 허용하지 않도록 지정
+
+        2] AS 키워드를 이용해 결과 테이블에서 속성의 이름을 바꾸어 출력가능
+            - AS 키워드 생략 가능 
+
+        3] 산술식을 이용해 검색
+            - 산술식 : 속성의 이름과 +,-,*,/ 등의 산술연산자와 상수로 구성
+            - 속성의 값이 실제로 변경되는 것은 아님.
+
+    2) 조건 검색
+        1] SELECT [ALL | DISTINCT] 속성들
+          from 테이블(들)
+          [WHERE 조건];
+            - WHERE 절에 비교 연산자, 논리 연산자를 이용한 검색 조건 제시 가능.
+                - 비교 연산자
+                    - = 
+                      <> 다르다
+                      <
+                      >
+                      <=
+                      >=
+                - 논리 연산자
+                    - AND
+                      OR
+                      NOT
+
+        2] LIKE 를 이용한 검색
+            - 부분적으로 일치하는 데이터를 검색
+            - 문자열을 이용하는 조건에만 LIKE 키워드 사용이 가능
+                - % : 0개 이상의 문자 (문자의 내용과 개수는 상관 없음.)
+                    - like '이젠%' : '이젠'으로 시작하는 문자열 모두 가능 ex) 이젠, 이젠아카데미, 이젠컴퓨터....
+                    - like '%이젠' : '이젠'으로 끝나는 문자열 모두 가능 ex) 이젠, 서울이젠, 신기한이젠....
+                    - like '%이젠%' : '이젠'이 포함되어있기만 하면 뭐든 가능 ex) 이젠, 서울이젠아카데미, 이젠컴퓨터 , 서울이젠....
+                - _ : 언더바의 숫자와 관계가 있음 1개라면 1개의 문자 (문자의 내용은 상관 없음)
+                    - like '이젠_ _ _(띄어쓰기 안해야됨. 개수보이게하기위해 띄어씀)' : '이젠' 으로 시작하는 5자 길이의 문자열
+                    - Like '_ _이%' : 세번째 문자가 '이' 인 문자열
+        
+        3] null을 이용한 검색
+            - null : empty가 아닌 unknown 
+            - is null : null 일경우를 확인
+            - is not null : null 값이 아닌지를 확인
+
+            - null 값과 산술 및 비교연산 하면 결과는 반드시 false가 됨.
+                - 5+ null returns null
+                  null > 5 returns null
+                  null = null return null
+
+            - null과 논리 연산 결과
+                - OR : (null OR true) = true
+                       (null OR false) = null
+                       (null OR null) = null
+                - AND : (null AND true) = null
+                        (null AND false) = false
+                        (null AND null) = null
+                - NOT : (NOT null) = null
+
+4. WHERE 조건절
+    1) 컬럼(Column)명 
+        - 보통 조건식의 좌측에 위치
+        - 비교 연산자
+            - =,>,<,>=.<=
+        - sql 연산자
+            - BETWEEN A AND B : A와 B사이에 있으면 됨
+            - IN(LIST) : 리스트에 있는 값중 하나라도 있으면 됨
+            - LIKE '비교문자열' : 비교문자열 형태와 일치하면 됨(%,_)
+            - IS NULL : 값이 NULL이면 됨
+        - 논리 연산자
+            - AND
+            - OR
+            - NOT
+        - 부정 비교 연산자
+            - !=
+              <>
+              ^=
+              NOT 컬럼명 = 
+        - 부정 SQL 연산자
+            - NOT BETWEEN A AND B : A와 B사이에 있지 않음
+            - NOT IN(LIST) : 리스트에 있는 값중 하나라도 있으면 안됨
+            - NOT LIKE '비교문자열' : 비교문자열 형태와 일치하지 않으면 됨(%,_)
+            - IS NOT NULL : NULL 값이 아니다.
+        - 문자, 숫자, 표현식 
+            - 보통 조건식의 우측에 위치
+        - 비교 컬럼명
+            - JOIN 사용시
+
+    2) 연산자 우선순위
+        1] () 괄호
+        2] NOT 연산자
+        3] 비교연산자 , SQL비교 연산자
+        4] AND
+        4] OR
+
+    3) 문자유형 비교방법 
+        1] 양쪽이 모두 CHAR 타입인 경우
+            - 길이가 서로 다르면 작은 쪽에 공배을 추가하여 길이를 같게 함.
+            - 서로 다른 문자가 나올 때까지 비교
+            - 달라진 첫번째 값에 따라 크기를 결정
+            - 공백의 수만 다르다면 (공백을 추가하여) 같은 값으로 결정
+        2] 비교연산자 중 한쪽이 VARCHAR 인 경우
+            - 서로 다른 문자가 나올 때까지 비교함.
+            - 길이가 다르다면 짧은것이 끝날 때까지만 비교한 후 길이가 긴 것이 크다고 판단함.
+            - VARCHAR는 공백도 문자로 판단함.

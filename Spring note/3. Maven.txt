@@ -1,0 +1,13 @@
+1. Maven 이란?
+    1) 라이브러리 관리
+        - 편리한 Dependent Library 관리
+        - 여러 프로젝트에서 프로젝트 정보나 jar 파일들을 공유하기 쉬움
+        - pom.xml 파일 수정하여 관리
+    2) 빌드 툴 
+        - 모든 프로젝트의 빌드 프로세스를 일관되게 가져갈 수 있음
+
+2. pom.xml
+    1) Maven 프로젝트를 생성하면 pom.xml 파일이 생성됨 
+    2) Project Object Model 정보를 담고 있음
+    3) 의존 관계(Dependency) 추가
+        - https://mvnrepository.com/ 검색 후 추가
