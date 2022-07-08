@@ -56,6 +56,7 @@
 8. 관련 애노테이션
     1) @RequestMapping
         - HTTP 요청 URL을 처리할 Controller 정의
+        - URL 주소를 맵핑
         - @RequestMapping("/~~") : contaxtPath 다음의 뎁스가 /~~ 이면 해당 컨트롤러 빈을 요청함
     2) @RequestParam
         - 매개변수 갯수가 많아지면 일일히 getParameter()를 이용하는 방법은 불편하므로 @RequestParam을 메서드에 적용해
@@ -69,3 +70,14 @@
 
         - Map에 매개변수 값 설정하기
             - 전송되는 매개변수 수가 많을 경우 Map에 바로 저장해서 사용 
+    3) @ModelAttribute
+        - HTTP 요청에 포함된 파라미터를 모델 객체로 바인딩
+
+    4) @Autowired
+        - 스프링 DI(Defendency Injection : 의존관계 주입)에서 사용되는 특별한 어노테이션임
+        - 의존하는 객체를 자동으로 주입해 주는 어노테이션
+        - 기존 XML 파일에서 각각의 빈을 DI로 주입했던 기능을 코드에서 애너테이션으로 자동으로 수행함
+        - 별도의 setter나 생성자 없이 속성의 빈을 주입할 수 있음
+
+8. Model 클래스 이용해 값 전달 
+    1) 따로 뷰 정보를 전달할 필요가 없을 때 사용하면 편리함           
