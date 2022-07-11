@@ -32,6 +32,7 @@
         - arifactId
             - 프로젝트 아티펙트 id를 설정함
             - 대개 패키지 이름으로 설정함
+            
     2) dependencies 정보 설정 태그
         - dependency
             - 해당 프로젝트에서 의존하는 다른 라이브러리 정보 기술

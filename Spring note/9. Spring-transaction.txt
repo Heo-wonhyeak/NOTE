@@ -31,4 +31,6 @@
                 - Tx이 진행 중이건 아니건, 새로 Tx 시작
     2) isolation
     3) readOnly
-    4) 
+    4) rollbackFor
+    5) noRollbackFor
+    6) time
