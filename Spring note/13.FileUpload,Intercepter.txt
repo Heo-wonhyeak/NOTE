@@ -1,0 +1,2 @@
+1. CommonsMultipartResolver 클래스를 이용하면 여러개 파일 한꺼번에 업로드 가능
+    - 
