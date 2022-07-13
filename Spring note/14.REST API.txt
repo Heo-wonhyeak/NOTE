@@ -1,0 +1,7 @@
+1. REST
+    1) REpresentational State Transfer 의 약자
+    2) 하나의 URI가 리소스를 처리하는 방식
+    3) REST 방식으로 제공되는 API를 REST API (or RESTful API) 라고 함
+
+2. @RestController 애너테이션
+    1) REST 방식의 데이터 처리를 지원 (Spring 4 버전)
