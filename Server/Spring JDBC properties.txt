@@ -1,0 +1,5 @@
+home connection DB(Window)
+jdbc.driverClassName=oracle.jdbc.driver.OracleDriver
+jdbc.url=jdbc:oracle:thin:@192.168.219.101:1521:xe
+jdbc.username=system
+jdbc.password=0824
