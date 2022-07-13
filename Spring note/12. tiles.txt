@@ -2,3 +2,6 @@
     1) 화면의 레이아웃 기능을 제공하는 오픈 소스 라이브러리
     2) 페이지 레이앙웃을 쉽고 단순하게 구현할 수 있음
     3) 공통된 레이아웃을 사용하므로 유지관리가 용이함
+
+        참고 웹
+            - https://tiles.apache.org/2.2/framework/tutorial/basic/pages.html
