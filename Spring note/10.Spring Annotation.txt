@@ -90,7 +90,7 @@
         - Java객체를 HTTP Response Body로 전송 할 수 있음.
         - jsp가 아닌 텍스트나 JSON으로 결과를 전송할 수 있음
 
-    7) @ResponseEntity
+    7) ResponseEntity
         - 답변시 데이터를 전달시 예외에 대해 세밀한 제어가 필요한 경우에 사용함
 
 9. Model 클래스 이용해 값 전달 
