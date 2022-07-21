@@ -17,3 +17,12 @@
     3) MemberController는 action 값을 세션에 저장함
     4) 로그인 창에서 ID와 비밀번호 입력하면 MemberController로 전송한 후 로그인 성공하면 세션에서 action 속성 값 가져와
        글쓰기 창으로 이동
+
+3. 게시글 수정하기 - img
+    1) 수정 유형 
+
+        글수정                  기존이미지 수정                 기존 이미지 삭제                    새 이미지 추가
+          o                        x                            x                               x
+          o                        o                            x                               x
+          o                        o                            o                               x
+          o                        o                            o                               o
