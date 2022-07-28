@@ -12,3 +12,14 @@
     1) 안드로이드 런타임
         - 자바 코어 라이브러리
         - 안드로이드 런타임(ART)
+
+3. Hello Android App
+    1) Name : 프로젝트 이름
+    2) Minimum SDK : 앱이 작동하는 최하 버전
+
+4. 안드로이드 프로젝트 생성
+    1) 2개 항목
+        - layout Name : 기본 화면인 XML 파일 이름으로 지정
+        - Activity Name : 기본소스인 Java 파일 이름으로 지정
+
+5. 개발환경의 구성
