@@ -22,4 +22,29 @@
         - layout Name : 기본 화면인 XML 파일 이름으로 지정
         - Activity Name : 기본소스인 Java 파일 이름으로 지정
 
+    2) 화면 구성을 위한 XML 파일
+        - view component(widget, class)
+            - parent view, root view, container view : 다른 뷰를 가질수 있는 뷰
+            - child view : 다른 뷰를 가질수 없는 뷰
+        - layout view 
+            - child view 의 배치(위치)를 설정하는 view
+
+        - parent view
+            child view1
+            child view2
+            child view3
+            ...
+
+        - LinearLayout
+            - 부모가 될 수 있는 뷰(container view)
+            - 자식의 위치를 설정하는 뷰
+                - 가로, 세로로 설정할 수 있음
+
+        - 크기 설정하는 특수한 키워드
+            - match_parent : parent view의 크기만큼 설정함 (가로,세로)
+            - wrap_content : 내용의 크기만큼 설정함 (width,height)
+
 5. 개발환경의 구성
+    1) 안드로이드 스튜디오
+        - 그레이들(Gradle) 기반 빌드 시스템
+        - 레이아웃 에디터
