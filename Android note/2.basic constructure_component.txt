@@ -26,3 +26,22 @@
     1) 사용자 인터페이스 작성 (XML)
     2) 자바 코드 작성 (JAVA, KOTLIN)
     3) manifest file 작성 (XML)
+
+4. androidx.appcompat.app.AppCompatActivity
+    1) 앞에 androidx가 붙은 패키지는 JetPack에 속하는 클래스로서 호환성을 위하여 최근에 사용이 권장되는 패키지임
+
+    2) public class MainActivity extends AppCompatActivity
+        - Activity로부터 상속받았으므로 액티비티가 됨
+
+    3) protected void onCreate() {...}
+        - 액티비티가 생성되는 순간에 딱 한번 호출
+        - 모든 초기화와 사용자 인터페이스 설정이 여기에 들어감.
+
+    4) setContentView(R.layout.activity_main)
+        - 액티비티의 화면을 설정하는 메서드
+        - 코드와 리소스는 개발도구에 의하여 자동 생성되는 R.jar 에 의하여 서로 연결됨
+
+5. APP 실행이 시작되는 곳
+    1) 안드로이드에는 main()이 없음
+        - 즉, Activity 별로 실행이됨
+    2) Activity중에서 onCreate() 메서드가 가장 먼저 실행됨
