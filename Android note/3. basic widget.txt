@@ -4,3 +4,12 @@
 2. 뷰와 뷰그룹
     1) View Class
         - 안드로이드 화면에서 실제로 사용하는 것들은 모두 View Class상속 받음.
+        - 'Control' or 'widget'이라고도 함
+            - Ex) 화면에서 버튼 (button widget) / 실제 코드에서 버튼 (button class)
+        - UI(User Interface)를 구성하는 기초적인 빌딩 블록임.
+    2) ViewGroup Class
+        - 다른 위젯을 담을 수 있는 위젯
+        - container 기능, layout 이라도 함 
+            - 정해진 정책에 따라서 뷰들을 배치함
+        - layout 은 ViewGroup Class 아래 존재
+        - layout 도 크게보면 widget 에 포함됨
