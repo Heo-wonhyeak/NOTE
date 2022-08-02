@@ -1,0 +1,15 @@
+1. @SpringBootApplication
+    1) 스프링 부트 애플리케이션의 시작점
+    2) @SpringBootConfiguration
+        - 스프링부트용 @Configuration
+    3) @EnableAutoConfiguration
+        - 사전에 정의한 라이브러리 빈을 등록
+    4) @ComponentScan
+        - 각종 스프링 빈 어노테이션을 베이스 패키지에서부터 스캔하여 스프링 빈으로 스프링 IoC 컨테이너에 등록
+    5) 스프링의 마스터다!! 
+
+2. SpringApplication의 인스턴스를 만들어 run() 전에 각종 설정 가능
+3. 프로젝트 코드 구조
+    1) 메인 애플리케이션 클래스는 루트 패키지에 놓는 것을 권장
+    
+    
