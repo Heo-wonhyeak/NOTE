@@ -15,3 +15,46 @@
 
 3. 공유 프레퍼런스
     1) 애플리케이션의 환경설정
+    2) 기초적인 자료형을 키-값 쌍으로 저장하고 복원할 수 있는 방법
+    3) 저장된 데이터는 사용자 애플리케이션이 종료되더라도 저장
+
+4. SQLite
+    1) android, ios 등 많은 모바일 장치에서 사용되는 데이터베이스
+    2) SQL을 거의 완전하게 지원
+        - DDL, DML
+    3) 결과집합(result set)
+        - 쿼리 조건 만족하는 레코드들의 집합
+        - 결과 집합에서 커서(Cursor) 를 사용하여 한번에 한 레코드씩 데이터에 접근가능
+            - getCount(), getcolumnIndex(),getcolumnNames(),.....
+
+5. 안드로이드 DB 사용하는 방법  
+    1) SQLiteOpenHelper
+        - onCreate()
+            - DB 안에 테이블과 초기 데이터를 생성함.
+        - onUpgrade()
+            - DB를 업그레이드 
+
+    2) SQLiteDatabase
+        - void execSQL(String sql)
+            - SELECT 명령을 제외한 모든 SQL 문장을 실행함
+        
+        - Cursor rawQuery()
+            - SELECT 명령어를 실행
+            - 쿼리 결과는 Cursor 객체로 반환됨
+                - Cursor 객체는 쿼리에 의하여 생성된 행들을 가리키고 잇음.
+                - 데이터를 읽는데 사용되는 표준적인 메커니즘임
+    
+    3) Cursor
+        - boolean moveToNext()
+            - 커서를 다음 행으로 이동.
+        - String getString(int columnIndex)
+            - 요청된 열의 값을 문자열로 반환
+
+6) 데이터베이스와 어댑터
+    1) SimpleCursorAdapter
+        - 데이터베이스와 화면을 연결함
+        - 데이터베이스에서 데이터를 읽어서 정해진 레이아웃으로 화면에 표시함.
+        - SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to)
+            - from : 문자열 배열, 화면에 표시하고 싶은 컬럼이름
+            - to : 각 from 안의 컬럼이 표시되는 뷰들의 리스트임.
+            
